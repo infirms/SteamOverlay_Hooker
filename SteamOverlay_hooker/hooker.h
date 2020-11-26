@@ -53,14 +53,14 @@ uintptr_t rel32_fix(uintptr_t ptr) {
 namespace Steam_Hooker
 {
 	template < typename fn = uintptr_t>
-	void* hook_function(void* function, fn detour_target, void* typede_of_fnc, int unknown_var)
+	void* hook_function(void* function, fn detour_target, void* orig_fn, int unknown_var)
 	{
 		auto addr_to_hook_func = find_pattern_ida_style("gameoverlayrenderer.dll", "55 8B EC 51 8B 45 10 C7");
 
 		typedef void* (__cdecl* proxy_function)(void*, void*, void*, int);
 		proxy_function do_hook_fn = (proxy_function)addr_to_hook_func;
 
-		return do_hook_fn(function, detour_target, typede_of_fnc, unknown_var);
+		return do_hook_fn(function, detour_target, orig_fn, unknown_var);
 	}
 
 	// In case you are using: E8 ? ? ? ? 83 C4 08 FF 15 ? ? ? ? (unhook_function) please don't forget about rel32_fix. Thanks!
