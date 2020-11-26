@@ -1,5 +1,5 @@
 # SteamOverlay_Hooker
-Repository conatain simple example how you can use Steam Gameoverlay to hook functions.
+Repository conatains simple example how you can use Steam Gameoverlay to hook functions.
 
 # Functions
 
