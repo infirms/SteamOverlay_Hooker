@@ -14,6 +14,10 @@ hook_function( (void*) function, (void*) detour_target, (void*) orig_fn, (int)un
 ```cpp
 unhook_function( (void*) function, (bool) should_log);
 ```
+# Usage
+
+  - Compile project with Release / x86 .
+  - Inject to any x86 process that has GameOverlayRenderer.dll in the memory.
 
 # Note*
 
