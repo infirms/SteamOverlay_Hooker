@@ -78,7 +78,7 @@ namespace Steam_Hooker
 
 int WINAPI winapi_flaswindow_hook(HWND window, bool state)
 {
-	std::cout << "Flashwindow was called!" << endl;
+	std::cout << "Flashwindow was called!\n" << endl;
 	return o_flashwindow(window, state);
 }
 
